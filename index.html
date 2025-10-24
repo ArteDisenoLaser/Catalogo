@@ -113,7 +113,7 @@
 
   <nav id="categorias">
     <!-- Botones de categorías -->
-    <button class="active" onclick="filterCategory('todas')">Todos</button>
+    <button class="active" onclick="filterCategory('todas')">Todas</button>
     <button onclick="filterCategory('Decoración')">Decoración</button>
     <button onclick="filterCategory('Organizadores')">Organizadores</button>
     <button onclick="filterCategory('Vehiculos')">Vehiculos</button>
@@ -172,7 +172,7 @@
   </main>
 
   <footer>
-    <small>Hecho con ♥ — Puedes editar este archivo en tu Bloc de notas.</small>
+    <small>Hechos con ♥.</small>
   </footer>
 
   <script>
@@ -185,7 +185,7 @@
       event.target.classList.add('active');
 
       products.forEach(prod => {
-        if (cat === 'todos' || prod.dataset.category === cat) {
+        if (cat === 'todas' || prod.dataset.category === cat) {
           prod.style.display = 'flex';
         } else {
           prod.style.display = 'none';
@@ -195,7 +195,4 @@
   </script>
 </body>
 </html>
-
-
-
 
