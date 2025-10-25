@@ -1,3 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Productos</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .producto {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 200px;
+    text-align: center;
+    cursor: pointer; /* 👈 convierte el mouse en manito */
+    transition: transform 0.2s;
+  }
+
+  .producto:hover {
+    transform: scale(1.05);
+  }
+
+  .producto img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .producto h3 {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  /* Modal (ventana emergente) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+  }
+
+  .modal-contenido {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 10% auto;
+    position: relative;
+  }
+
+  .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .modal img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Catálogo de Productos</h1>
+<div class="catalogo">
+  <div class="producto" onclick="abrirModal('modal1')">
+    <img src="imagenes/producto1.jpg" alt="Producto 1">
+    <h3>Producto 1</h3>
+  </div>
+
+  <div class="producto" onclick="abrirModal('modal2')">
+    <img src="imagenes/producto2.jpg" alt="Producto 2">
+    <h3>Producto 2</h3>
+  </div>
+</div>
+
+<!-- Modal Producto 1 -->
+<div id="modal1" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
+    <img src="imagenes/producto1.jpg" alt="Producto 1">
+    <h2>Producto 1</h2>
+    <p><b>Descripción:</b> Este producto está hecho con materiales de alta calidad.</p>
+    <p><b>Medidas:</b> 20x30 cm</p>
+    <p><b>Material:</b> MDF 3 mm</p>
+    <p><b>Tiempo de entrega:</b> 3 días hábiles</p>
+  </div>
+</div>
+
+<!-- Modal Producto 2 -->
+<div id="modal2" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
+    <img src="imagenes/producto2.jpg" alt="Producto 2">
+    <h2>Producto 2</h2>
+    <p><b>Descripción:</b> Ideal para decoración y regalos personalizados.</p>
+    <p><b>Medidas:</b> 25x25 cm</p>
+    <p><b>Material:</b> Madera natural</p>
+    <p><b>Tiempo de entrega:</b> 5 días hábiles</p>
+  </div>
+</div>
+
+<script>
+function abrirModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function cerrarModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+// Cerrar al hacer clic fuera del modal
+window.onclick = function(event) {
+  let modales = document.getElementsByClassName('modal');
+  for (let modal of modales) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
 <!doctype html>
 <html lang="es">
 <head>
@@ -205,3 +349,4 @@
   </script>
 </body>
 </html>
+
