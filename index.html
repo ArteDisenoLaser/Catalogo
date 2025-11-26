@@ -1,207 +1,241 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Catálogo de productos</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #fafafa;
-      color: #333;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catálogo de productos</title>
+<style>
+/* ======== ESTILOS GENERALES ========= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #fafafa;
+  color: #333;
+}
 
-    header {
-      background: #3f51b5;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+header {
+  background: #3f51b5;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 1.8em;
-    }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #f0f0f0;
+  padding: 10px;
+}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #f0f0f0;
-      padding: 10px;
-    }
+nav button {
+  margin: 5px;
+  padding: 8px 14px;
+  border: none;
+  background: #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    nav button {
-      margin: 5px;
-      padding: 8px 14px;
-      border: none;
-      background: #ddd;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+nav button:hover {
+  background: #ccc;
+}
 
-    nav button:hover {
-      background: #ccc;
-    }
+nav button.active {
+  background: #3f51b5;
+  color: white;
+}
 
-    nav button.active {
-      background: #3f51b5;
-      color: white;
-    }
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
 
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 10px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.product {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer; /* 👈 cursor como mano */
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
 
-    .product {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s;
-    }
+.product:hover {
+  transform: scale(1.03);
+}
 
-    .product:hover {
-      transform: scale(1.03);
-    }
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
 
-    .product img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
+/* ====== MODAL ====== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
 
-    .info {
-      padding: 10px 14px;
-      flex-grow: 1;
-    }
+.modal-contenido {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  margin: 6% auto;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  animation: fade-open 0.3s ease-out;
+}
 
-    .info h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.1em;
-    }
+@keyframes fade-open {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
 
-    .price {
-      font-weight: bold;
-      color: #2e7d32;
-    }
+.modal img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      background: #f0f0f0;
-      margin-top: 30px;
-    }
-  </style>
+.cerrar {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #444;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  background: #f0f0f0;
+  margin-top: 30px;
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Catálogo de productos</h1>
-    <p>Selecciona una categoría para explorar nuestros artículos</p>
-  </header>
+<header>
+  <h1>Catálogo de productos</h1>
+  <p>Selecciona una categoría para explorar nuestros artículos</p>
+</header>
 
-  <nav id="categorias">
-    <!-- Botones de categorías -->
-    <button class="active" onclick="filterCategory('todas')">Todas</button>
-    <button onclick="filterCategory('Decoración')">Decoración</button>
-    <button onclick="filterCategory('Organizadores')">Organizadores</button>
-    <button onclick="filterCategory('Vehiculos')">Vehículos</button>
-  </nav>
+<nav id="categorias">
+  <button class="active" onclick="filterCategory('todas')">Todas</button>
+  <button onclick="filterCategory('Decoración')">Decoración</button>
+  <button onclick="filterCategory('Organizadores')">Organizadores</button>
+  <button onclick="filterCategory('Vehiculos')">Vehículos</button>
+</nav>
 
-  <main id="product-list">
-    <!-- PRODUCTO 1 -->
-    <div class="product" data-category="Decoración">
-      <img src="imagenes/D_Farolito 001.png" alt="Farolito decorativo">
-      <div class="info">
-        <h3>Farolito 001</h3>
-        <p class="price">$25.000</p>
-        <p>Farolito artesanal ideal para decorar habitaciones o regalar en ocasiones especiales. Disponible en tono madera natural o en el color que prefieras. Perfecto para ambientes cálidos o fechas navideñas.</p>
-      </div>
+<main id="product-list">
+
+  <!-- CADA PRODUCTO ACTIVA UN MODAL POR ID -->
+  <div class="product" data-category="Decoración" onclick="abrirModal('modal1')">
+    <img src="imagenes/D_Farolito 001.png" alt="Farolito decorativo">
+    <div class="info">
+      <h3>Farolito 001</h3>
+      <p class="price">$25.000</p>
     </div>
+  </div>
 
-    <!-- PRODUCTO 2 -->
-    <div class="product" data-category="Decoración">
-      <img src="imagenes/D-Decoracion gato y luna 001.jpg" alt="Decoración gato y luna">
-      <div class="info">
-        <h3>Decoración Gato y Luna</h3>
-        <p class="price">$110.000</p>
-        <p>Decoración luminosa con diseño de gato y luna, ideal para habitaciones infantiles o espacios acogedores. Incluye luces LED y control remoto. Puedes elegir entre colores fijos o luces cambiantes.</p>
-      </div>
+  <div class="product" data-category="Decoración" onclick="abrirModal('modal2')">
+    <img src="imagenes/D-Decoracion gato y luna 001.jpg" alt="Gato y luna decorativo">
+    <div class="info">
+      <h3>Decoración Gato y Luna</h3>
+      <p class="price">$110.000</p>
     </div>
+  </div>
 
-    <!-- PRODUCTO 3 -->
-    <div class="product" data-category="Decoración">
-      <img src="imagenes/D_Cuadro guitarra 3 partes 001.jpg" alt="Cuadro guitarra 3 partes">
-      <div class="info">
-        <h3>Cuadro Guitarra 3 Partes</h3>
-        <p class="price">$45.000</p>
-        <p>Set de tres cuadros artísticos con diseño de guitarra en relieve. Cada pieza mide 20x20 cm. Ideal para amantes de la música y decoración moderna.</p>
-      </div>
+  <div class="product" data-category="Decoración" onclick="abrirModal('modal3')">
+    <img src="imagenes/D_Cuadro guitarra 3 partes 001.jpg" alt="Guitarra 3 partes">
+    <div class="info">
+      <h3>Cuadro Guitarra 3 Partes</h3>
+      <p class="price">$45.000</p>
     </div>
+  </div>
 
-    <!-- PRODUCTO 4 -->
-    <div class="product" data-category="Decoración">
-      <img src="imagenes/D_Decoracion con reloj 001.jpg" alt="Decoración con reloj">
-      <div class="info">
-        <h3>Decoración con Reloj</h3>
-        <p class="price">$110.000</p>
-        <p>Elegante pieza decorativa con reloj funcional incluido. Perfecta para salas, habitaciones o estudios. Diseño moderno y acabado de alta calidad. (No incluye pilas).</p>
-      </div>
-    </div>
+</main>
 
-    <!-- PRODUCTO 5 -->
-    <div class="product" data-category="Organizadores">
-      <img src="imagenes/reloj.jpg" alt="Reloj inteligente">
-      <div class="info">
-        <h3>Reloj Inteligente</h3>
-        <p class="price">$120.000</p>
-        <p>Reloj multifuncional con monitoreo de salud, notificaciones y conexión Bluetooth. Diseñado para mantenerte activo y conectado durante el día.</p>
-      </div>
-    </div>
+<!-- ===== MODALES ===== -->
 
-    <!-- PRODUCTO 6 -->
-    <div class="product" data-category="Decoración">
-      <img src="imagenes/D_Farolito 001.png" alt="Farolitos variados">
-      <div class="info">
-        <h3>Farolito 002</h3>
-        <p class="price">$45.000</p>
-        <p>Versión mediana de nuestros farolitos decorativos. Ideal para iluminar rincones o centros de mesa. Fabricado en MDF con acabados personalizados.</p>
-      </div>
-    </div>
-  </main>
+<div id="modal1" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
+    <img src="imagenes/D_Farolito 001.png">
+    <h2>Farolito 001</h2>
+    <p><b>Precio:</b> $25.000</p>
+    <p><b>Descripción:</b> Farolito artesanal ideal para decorar habitaciones o regalar.</p>
+    <p><b>Material:</b> MDF 3 mm - Personalizable</p>
+    <p><b>Tiempo de entrega:</b> 2 a 4 días hábiles</p>
+  </div>
+</div>
 
-  <footer>
-    <small>Hecho con ♥ por Arte Diseño Láser.</small>
-  </footer>
+<div id="modal2" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
+    <img src="imagenes/D-Decoracion gato y luna 001.jpg">
+    <h2>Decoración Gato y Luna</h2>
+    <p><b>Precio:</b> $110.000</p>
+    <p>Incluye luces LED y control remoto. Ideal para habitaciones infantiles.</p>
+  </div>
+</div>
 
-  <script>
-    function filterCategory(cat) {
-      const products = document.querySelectorAll('.product');
-      const buttons = document.querySelectorAll('nav button');
+<div id="modal3" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
+    <img src="imagenes/D_Cuadro guitarra 3 partes 001.jpg">
+    <h2>Cuadro Guitarra 3 Partes</h2>
+    <p><b>Precio:</b> $45.000</p>
+    <p>Set de tres cuadros artísticos de 20x20 cm cada uno. Ideal para amantes de la música.</p>
+  </div>
+</div>
 
-      // Cambiar botón activo
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+<footer>
+  <small>Hecho con ♥ por Arte Diseño Láser.</small>
+</footer>
 
-      products.forEach(prod => {
-        if (cat === 'todas' || prod.dataset.category === cat) {
-          prod.style.display = 'flex';
-        } else {
-          prod.style.display = 'none';
-        }
-      });
-    }
-  </script>
+<script>
+/* FILTRO */
+function filterCategory(cat) {
+  const products = document.querySelectorAll('.product');
+  const buttons = document.querySelectorAll('nav button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  products.forEach(prod => {
+    prod.style.display = (cat === 'todas' || prod.dataset.category === cat) ? 'flex' : 'none';
+  });
+}
+
+/* MODALES */
+function abrirModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function cerrarModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+window.onclick = function(e) {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (e.target === modal) { modal.style.display = 'none'; }
+  });
+}
+</script>
 </body>
 </html>
