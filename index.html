@@ -4,129 +4,85 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Catálogo de productos</title>
+
 <style>
-/* ======== ESTILOS GENERALES ========= */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #fafafa;
-  color: #333;
-}
+  body { font-family: Arial, sans-serif; margin: 0; background: #fafafa; color:#333; }
 
-header {
-  background: #3f51b5;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
+  header {
+    background:#3f51b5; color:white; padding:20px; text-align:center;
+  }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: #f0f0f0;
-  padding: 10px;
-}
+  nav {
+    display:flex; flex-wrap:wrap; justify-content:center;
+    background:#f0f0f0; padding:10px;
+  }
 
-nav button {
-  margin: 5px;
-  padding: 8px 14px;
-  border: none;
-  background: #ddd;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+  nav button {
+    margin:5px; padding:8px 14px; border:none; background:#ddd;
+    border-radius:6px; cursor:pointer; transition:background .3s;
+  }
 
-nav button:hover {
-  background: #ccc;
-}
+  nav button.active, nav button:hover { background:#3f51b5; color:white; }
 
-nav button.active {
-  background: #3f51b5;
-  color: white;
-}
+  main {
+    max-width:1000px; margin:20px auto; padding:10px;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:20px;
+  }
 
-main {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-}
+  .product {
+    background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.1);
+    overflow:hidden; display:flex; flex-direction:column; cursor:pointer;
+    transition:transform .2s;
+  }
+  .product:hover { transform:scale(1.03); }
 
-.product {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  overflow: hidden;
-  cursor: pointer; /* 👈 cursor como mano */
-  transition: transform 0.2s;
-  display: flex;
-  flex-direction: column;
-}
+  .product img { width:100%; height:160px; object-fit:cover; }
+  .info { padding:10px 14px; flex-grow:1; }
+  .info h3 { margin:0 0 8px 0; font-size:1.1em; }
+  .price { font-weight:bold; color:#2e7d32; }
 
-.product:hover {
-  transform: scale(1.03);
-}
+  footer {
+    text-align:center; padding:20px; color:#777; background:#f0f0f0; margin-top:30px;
+  }
 
-.product img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
+  /* ===== MODAL ===== */
+  .modal-bg {
+    position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,.7); display:none; justify-content:center;
+    align-items:center; padding:20px; z-index:1000;
+  }
 
-/* ====== MODAL ====== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-}
+  .modal {
+    background:white; width:90%; max-width:800px; border-radius:10px;
+    display:flex; flex-wrap:wrap; overflow:hidden; position:relative;
+  }
 
-.modal-contenido {
-  background: white;
-  width: 90%;
-  max-width: 500px;
-  margin: 6% auto;
-  border-radius: 10px;
-  padding: 20px;
-  position: relative;
-  animation: fade-open 0.3s ease-out;
-}
+  .modal-img {
+    width:35%; min-width:250px; background:#000; display:flex;
+    justify-content:center; align-items:center; position:relative;
+  }
 
-@keyframes fade-open {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+  .modal-img img {
+    width:100%; height:auto; object-fit:cover;
+  }
 
-.modal img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
+  .arrow {
+    position:absolute; top:50%; transform:translateY(-50%);
+    font-size:26px; color:white; background:rgba(0,0,0,.5);
+    padding:5px 10px; cursor:pointer; user-select:none;
+  }
+  .arrow:hover { background:black; }
+  .arrow.left { left:5px; } .arrow.right { right:5px; }
 
-.cerrar {
-  position: absolute;
-  top: 8px;
-  right: 15px;
-  font-size: 22px;
-  cursor: pointer;
-  color: #444;
-}
+  .modal-info {
+    width:65%; padding:20px;
+  }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #777;
-  background: #f0f0f0;
-  margin-top: 30px;
-}
+  .close-btn {
+    position:absolute; top:10px; right:10px; font-size:18px;
+    cursor:pointer; background:#ddd; padding:5px 10px; border-radius:4px;
+  }
+  .close-btn:hover { background:#bbb; }
 </style>
 </head>
 
@@ -144,98 +100,83 @@ footer {
 </nav>
 
 <main id="product-list">
-
-  <!-- CADA PRODUCTO ACTIVA UN MODAL POR ID -->
-  <div class="product" data-category="Decoración" onclick="abrirModal('modal1')">
-    <img src="imagenes/D_Farolito 001.png" alt="Farolito decorativo">
+  <!-- PRODUCTO EJEMPLO (AGREGA MÁS IGUAL) -->
+  <div class="product" data-category="Decoración"
+    onclick="openModal('Farolito 001', '$25.000',
+    'Farolito artesanal ideal para decorar habitaciones o regalar en ocasiones especiales. Acabado en tono madera o color personalizado.',
+    ['imagenes/D_Farolito 001.png','imagenes/D-Farolito 002.jpg'])">
+    <img src="imagenes/D_Farolito 001.png">
     <div class="info">
       <h3>Farolito 001</h3>
       <p class="price">$25.000</p>
+      <p>Decoración artesanal ideal para regalo o ambientes cálidos.</p>
     </div>
   </div>
 
-  <div class="product" data-category="Decoración" onclick="abrirModal('modal2')">
-    <img src="imagenes/D-Decoracion gato y luna 001.jpg" alt="Gato y luna decorativo">
-    <div class="info">
-      <h3>Decoración Gato y Luna</h3>
-      <p class="price">$110.000</p>
-    </div>
-  </div>
-
-  <div class="product" data-category="Decoración" onclick="abrirModal('modal3')">
-    <img src="imagenes/D_Cuadro guitarra 3 partes 001.jpg" alt="Guitarra 3 partes">
-    <div class="info">
-      <h3>Cuadro Guitarra 3 Partes</h3>
-      <p class="price">$45.000</p>
-    </div>
-  </div>
-
+  <!-- Puedes copiar esto mismo y cambiar valores -->
 </main>
-
-<!-- ===== MODALES ===== -->
-
-<div id="modal1" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarModal('modal1')">&times;</span>
-    <img src="imagenes/D_Farolito 001.png">
-    <h2>Farolito 001</h2>
-    <p><b>Precio:</b> $25.000</p>
-    <p><b>Descripción:</b> Farolito artesanal ideal para decorar habitaciones o regalar.</p>
-    <p><b>Material:</b> MDF 3 mm - Personalizable</p>
-    <p><b>Tiempo de entrega:</b> 2 a 4 días hábiles</p>
-  </div>
-</div>
-
-<div id="modal2" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarModal('modal2')">&times;</span>
-    <img src="imagenes/D-Decoracion gato y luna 001.jpg">
-    <h2>Decoración Gato y Luna</h2>
-    <p><b>Precio:</b> $110.000</p>
-    <p>Incluye luces LED y control remoto. Ideal para habitaciones infantiles.</p>
-  </div>
-</div>
-
-<div id="modal3" class="modal">
-  <div class="modal-contenido">
-    <span class="cerrar" onclick="cerrarModal('modal3')">&times;</span>
-    <img src="imagenes/D_Cuadro guitarra 3 partes 001.jpg">
-    <h2>Cuadro Guitarra 3 Partes</h2>
-    <p><b>Precio:</b> $45.000</p>
-    <p>Set de tres cuadros artísticos de 20x20 cm cada uno. Ideal para amantes de la música.</p>
-  </div>
-</div>
 
 <footer>
   <small>Hecho con ♥ por Arte Diseño Láser.</small>
 </footer>
 
+<!-- ========= MODAL ========= -->
+<div class="modal-bg" id="modal-bg">
+  <div class="modal">
+    <span class="close-btn" onclick="closeModal()">X</span>
+
+    <div class="modal-img">
+      <span class="arrow left" onclick="prevImg()">❮</span>
+      <img id="modal-img">
+      <span class="arrow right" onclick="nextImg()">❯</span>
+    </div>
+
+    <div class="modal-info">
+      <h2 id="modal-title"></h2>
+      <h3 class="price" id="modal-price"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+</div>
+
 <script>
-/* FILTRO */
+let currentImages = [];
+let currentIndex = 0;
+
+function openModal(titulo, precio, descripcion, imagenes) {
+  currentImages = imagenes;
+  currentIndex = 0;
+  document.getElementById("modal-title").innerText = titulo;
+  document.getElementById("modal-price").innerText = precio;
+  document.getElementById("modal-desc").innerText = descripcion;
+  document.getElementById("modal-img").src = currentImages[currentIndex];
+  document.getElementById("modal-bg").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal-bg").style.display = "none";
+}
+
+function nextImg() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  document.getElementById("modal-img").src = currentImages[currentIndex];
+}
+
+function prevImg() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById("modal-img").src = currentImages[currentIndex];
+}
+
 function filterCategory(cat) {
   const products = document.querySelectorAll('.product');
   const buttons = document.querySelectorAll('nav button');
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
-  products.forEach(prod => {
-    prod.style.display = (cat === 'todas' || prod.dataset.category === cat) ? 'flex' : 'none';
-  });
-}
 
-/* MODALES */
-function abrirModal(id) {
-  document.getElementById(id).style.display = 'block';
-}
-
-function cerrarModal(id) {
-  document.getElementById(id).style.display = 'none';
-}
-
-window.onclick = function(e) {
-  document.querySelectorAll('.modal').forEach(modal => {
-    if (e.target === modal) { modal.style.display = 'none'; }
-  });
+  products.forEach(prod => prod.style.display =
+    (cat === 'todas' || prod.dataset.category === cat) ? 'flex' : 'none');
 }
 </script>
+
 </body>
 </html>
