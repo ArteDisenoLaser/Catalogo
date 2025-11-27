@@ -241,12 +241,16 @@ function generateProducts(){
   return products;
 }
 
+/* ===================== RENDERIZADO EN PÁGINA ===================== */
+
+const products = generateProducts();
+
 /* Cajas y bandejas — Producto 001 */
 let p = products.find(x => x.id === "organizadores_p001");
 p.name = "Organizador de llaves y llaveros";
 p.price = 40000;
-p.desc = "Caja decorativa estilo floral. Ideal para alianzas o joyas pequeñas.";
-p.details.medidas = "12 x 8 x 6 cm";
+p.desc = "Hermosos organizadores para colgar llaves y llaveros, diseños unico y hogareño. se entregan personalizados y con los colores a su gusto si lo desea.";
+p.details.medidas = "18 cm de alto x 27 cm de ancho";
 p.images = [
   "imagenes/organizadores/p001.png",
   "imagenes/organizadores/p002.png",
@@ -254,11 +258,6 @@ p.images = [
   "imagenes/organizadores/p004.png",
   "imagenes/organizadores/p005.png"
 ];
-  
-
-/* ===================== RENDERIZADO EN PÁGINA ===================== */
-
-const products = generateProducts();
 
 /* Render botones de categoria */
 const catButtons = document.getElementById('catButtons');
@@ -437,6 +436,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
