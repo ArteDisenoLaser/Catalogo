@@ -391,7 +391,7 @@ function contactWhatsApp(){
   if(!currentProduct) return alert("No hay producto seleccionado.");
   const texto = encodeURIComponent(`Hola, estoy interesado en *${currentProduct.name}* (precio: $${formatCOP(currentProduct.price)} COP). ¿Está disponible?`);
   // Cambia el número por tu número real (formato internacional sin 0 ni +; ejemplo: 57300... para Colombia)
-  const telefono = "57TU_NUMERO"; // <<< --- EDITA AQUÍ con tu número (ej: 573001234567)
+  const telefono = "573103621365"; // <<< --- EDITA AQUÍ con tu número (ej: 573001234567)
   const wa = `https://wa.me/${telefono}?text=${texto}`;
   window.open(wa, '_blank');
 }
@@ -422,4 +422,5 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
