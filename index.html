@@ -241,36 +241,7 @@ function generateProducts(){
   return products;
 }
 
-/* ===== EDITAR PRODUCTOS MANUALMENTE ===== */
-/*img/
- └─ cajas-bandejas/
- │     producto01-1.jpg
- │     producto01-2.jpg
- │     producto01-3.jpg
- │     producto02-1.jpg...
- └─ carros-vehiculos/
- └─ casas-muebles/
- └─ decoracion/
- └─ engranes/
- └─ organizadores/
- └─ personajes/
- └─ rompecabezas/
- └─ vectores/
- └─ otros/*/
-  
-/* Cajas y bandejas — Producto 001 */
-let p = products.find(x => x.id === "organizadores_p001");
-p.name = "Organizador de llave casita";
-p.price = 40000;
-p.desc = "Hermoso organizador de llaves y llaveros, estilo unico y hogareño. Se entrega personalizado y si desea con los los colores que mas le gusten.";
-p.details.medidas = "18 cm alto x 27 cm ancho";
-p.images = [
-  "imagenes/organizadores/p001.png",
-  "imagenes/organizadores/p002.jpg",
-  "imagenes/organizadores/p003.jpg",
-  "imagenes/organizadores/p004.jpg",
-  "imagenes/organizadores/p005.jpg"
-];
+
   
 
 /* ===================== RENDERIZADO EN PÁGINA ===================== */
@@ -454,6 +425,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
