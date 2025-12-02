@@ -113,7 +113,50 @@
   .btn.white{ background:#fff; color:var(--madera); border:1px solid var(--madera-osc); }
 
   .close-x{ position:absolute; top:10px; right:10px; background:#fff; border-radius:6px; padding:6px 8px; cursor:pointer; border:1px solid rgba(0,0,0,.08); }
-
+  
+  /* Contenedor general del header */
+  .header-contenedor{
+    text-align: center;
+    padding: 20px 10px;
+  }
+  
+  /* Línea superior con logo + títulos */
+  .header-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  /* Logo */
+  .logo-empresa{
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+  }
+  
+  /* Títulos (h1 + catálogo) */
+  .header-titulos h1{
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .header-titulos p{
+    margin: 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  /* Versículo */
+  .header-versiculo{
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+    
   /* responsive */
   @media(max-width:900px){
     .modal{ flex-direction:column; }
@@ -124,12 +167,26 @@
 </head>
 <body>
 
-<header>
-  <img src="imagenes/logo.jpg">
-  <h1>Arte, Diseño y Laser</h1>
-  <p>CATÁLOGO</p>
-  <p>E indiscutiblemente, grande es el misterio de la piedad: Dios fue manifestado en carne, Justificado en el Espíritu, Visto de los ángeles, Predicado a los gentiles, Creído en el mundo, Recibido arriba en gloria.</p>
-  <p>1 TIMOTEO 3:16 RVR1960</p>
+<header class="header-contenedor">
+
+  <div class="header-top">
+    <img src="imagenes/logo.jpg" class="logo-empresa" alt="Logo">
+
+    <div class="header-titulos">
+      <h1>Arte, Diseño y Laser</h1>
+      <p>CATÁLOGO</p>
+    </div>
+  </div>
+
+  <div class="header-versiculo">
+    <p>E indiscutiblemente, grande es el misterio de la piedad:<br>
+    Dios fue manifestado en carne, Justificado en el Espíritu,<br>
+    Visto de los ángeles, Predicado a los gentiles, Creído en el mundo,<br>
+    Recibido arriba en gloria.</p>
+
+    <p><strong>1 TIMOTEO 3:16 RVR1960</strong></p>
+  </div>
+
 </header>
 
 <div class="topbar">
@@ -786,6 +843,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
