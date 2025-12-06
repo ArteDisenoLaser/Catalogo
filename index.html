@@ -98,9 +98,27 @@
   .arrow.left{ left:10px } .arrow.right{ right:10px }
 
   /* mini thumbs en parte inferior de la imagen */
-  .thumbs{ position:absolute; bottom:12px; left:12px; right:12px; display:flex; gap:8px; justify-content:center; }
-  .thumbs img{ width:64px; height:48px; object-fit:cover; border-radius:6px; border:2px solid rgba(255,255,255,.4); cursor:pointer; }
+  .thumbs{
+  position:absolute;
+  bottom:12px;
+  left:12px;
+  right:12px;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding-bottom:6px;
+  scrollbar-width: thin; /* Firefox */
+}
 
+.thumbs img{
+  flex:0 0 auto;        /* evita que se reduzcan */
+  width:64px;
+  height:48px;
+  object-fit:cover;
+  border-radius:6px;
+  border:2px solid rgba(255,255,255,.4);
+  cursor:pointer;
+}
   /* lado derecho: info */
   .modal-right{ width:54%; padding:20px; display:flex; flex-direction:column; gap:12px; }
   .modal-title{ margin:0; color:var(--madera-osc); font-size:1.35rem; }
@@ -853,6 +871,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
