@@ -230,8 +230,9 @@
       </div>
 
       <div class="modal-price" id="modalPrice">$0 COP</div>
+      <div class="modal-extra" id="modalExtra">Extra...</div>
       <div class="modal-desc" id="modalDesc">Descripción extendida del producto...</div>
-
+      
       <div class="modal-details" id="modalDetails">
         <!-- aquí van lista de detalles: material, medidas, tiempo de entrega -->
       </div>
@@ -264,7 +265,7 @@ const categories = [
 
 /* Material y tiempo por defecto (cámbialos si lo necesitas) */
 const DEFAULT_MATERIAL = "MDF 3 mm";
-const DEFAULT_TIME = "2 a 4 días hábiles";
+const DEFAULT_TIME = "3 a 5 días hábiles";
 
 /* Cantidades — no hace falta cambiar */
 const PRODUCTS_PER_CATEGORY = 10;
@@ -341,6 +342,7 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm y 4mm",
           extra: "Diseño completamente editable",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p001.png"
@@ -358,6 +360,7 @@ function generateProducts(){
           medidas: "Alto 33 cm x Ancho 11 cm x Fondo 11 cm",
           material: "MDF 3mm",
           extra: "Personalización incluida",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p002.png"
@@ -375,6 +378,7 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm",
           extra: "Diseño adaptado a tus necesidades",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p003_1.jpg", 
@@ -395,6 +399,7 @@ function generateProducts(){
           medidas: "10–20 cm según diseño",
           material: "MDF 3mm y acrílico",
           extra: "Personalización sin costo adicional",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p004_1.png", 
@@ -413,6 +418,7 @@ function generateProducts(){
           medidas: "15 cm x 15 cm",
           material: "MDF 3mm",
           extra: "Ideal para regalos",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p005.jpg"
@@ -430,6 +436,7 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm",
           extra: "Decoración incluida",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p006.jpg"
@@ -447,6 +454,7 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm",
           extra: "Incluye grabado",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p007_1.png", 
@@ -467,6 +475,7 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm",
           extra: "Diseño frontal personalizable",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p008_1.jpg", 
@@ -485,6 +494,7 @@ function generateProducts(){
           medidas: "18 cm x 12 cm",
           material: "MDF 3mm",
           extra: "Personalización completa",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p009_1.jpg", 
@@ -503,12 +513,33 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm",
           extra: "Diseño libre",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/cajas/p010.jpg"
       ]
   },
-  
+    
+  {
+      id: "cajas_p013",
+      category: "cajas",
+      name: "Cajas – Diseños varios",
+      price: 45000,
+      desc: "Cajas personalizadas para termo.",
+      details: {
+          desc: "Cajas elaboradas con diferentes diseños según tu idea o necesidad. Nota: el precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Diseño libre",
+          tiempo: "3 a 5 días",
+      },
+      images: [
+          "imagenes/cajas/p013_1.jpg",
+          "imagenes/cajas/p013_2.jpg",
+          "imagenes/cajas/p013_3.jpg",
+          "imagenes/cajas/p013_4.jpg"
+      ]
+  },
   
   /* ============================= */
   /*         OTROS PRODUCTOS       */
@@ -525,6 +556,7 @@ function generateProducts(){
           medidas: "4–10 cm según diseño",
           material: "Acrílico grabado",
           extra: "Incluye diseño digital",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/otros/p001.png"
@@ -547,6 +579,7 @@ function generateProducts(){
           medidas: "28 cm x 18 cm",
           material: "MDF 3mm",
           extra: "Colores y nombres personalizables",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/organizadores/p001.1.png", 
@@ -582,6 +615,7 @@ function generateProducts(){
           medidas: "6–10 cm según modelo",
           material: "MDF o acrílico",
           extra: "Incluye anillo metálico",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/organizadores/p002.png",
@@ -605,6 +639,7 @@ function generateProducts(){
           medidas: "35 cm x 24 cm",
           material: "MDF 3mm y LED cálido",
           extra: "Colores personalizables",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p001.jpg"
@@ -622,6 +657,7 @@ function generateProducts(){
           medidas: "30–40 cm según figura",
           material: "MDF 3mm",
           extra: "Colores y nombres personalizables",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p004.png"
@@ -639,6 +675,7 @@ function generateProducts(){
           medidas: "34 cm x 25 cm",
           material: "MDF 3mm",
           extra: "Colores personalizados",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p005.png"
@@ -656,6 +693,7 @@ function generateProducts(){
           medidas: "32 cm x 28 cm",
           material: "MDF 3mm",
           extra: "Incluye base de montaje",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p006.png"
@@ -673,6 +711,7 @@ function generateProducts(){
           medidas: "35 cm",
           material: "MDF 3mm",
           extra: "Colores y flores personalizables",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p007.jpg"
@@ -690,6 +729,7 @@ function generateProducts(){
           medidas: "30–40 cm según figura",
           material: "MDF 3mm",
           extra: "Colores personalizables",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p008.png",
@@ -710,6 +750,7 @@ function generateProducts(){
           medidas: "40 cm",
           material: "MDF 3mm + LED",
           extra: "Colores totalmente personalizables",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p009.png"
@@ -727,6 +768,7 @@ function generateProducts(){
           medidas: "30 cm de diámetro",
           material: "MDF 3mm",
           extra: "Incluye mecanismo silencioso",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p010.png"
@@ -744,6 +786,7 @@ function generateProducts(){
           medidas: "30 cm",
           material: "MDF 3mm",
           extra: "Incluye mecanismo",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p011_1.png",
@@ -764,6 +807,7 @@ function generateProducts(){
           medidas: "10×15 cm",
           material: "MDF 3mm",
           extra: "Grabado incluido",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p012.png"
@@ -781,6 +825,7 @@ function generateProducts(){
           medidas: "18–25 cm según modelo",
           material: "MDF 3mm",
           extra: "Incluye frase personalizada",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p013.png"
@@ -798,6 +843,7 @@ function generateProducts(){
           medidas: "Personalizadas",
           material: "MDF 3mm",
           extra: "Diseño especial a tu gusto",
+          tiempo: "3 a 5 días",
       },
       images: [
           "imagenes/decoracion/p014.png"
@@ -869,6 +915,7 @@ const modalBg = document.getElementById('modalBg');
 const modalImg = document.getElementById('modalImg');
 const modalTitle = document.getElementById('modalTitle');
 const modalPrice = document.getElementById('modalPrice');
+const modalExtra = document.getElementById('modalExtra');
 const modalDesc = document.getElementById('modalDesc');
 const modalDetails = document.getElementById('modalDetails');
 const thumbsContainer = document.getElementById('thumbsContainer');
@@ -883,6 +930,7 @@ function openModal(prod){
   currentIndex = 0;
   modalTitle.innerText = prod.name;
   modalPrice.innerText = `Precio: $${formatCOP(prod.price)} COP`;
+  modalExtra.innerText = prod.extra;
   modalDesc.innerText = prod.desc;
   modalDetails.innerHTML = `
     <strong>Material:</strong> ${prod.details.material} <br>
@@ -985,6 +1033,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
