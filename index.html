@@ -320,372 +320,488 @@ function generateProducts(){
 }*/
 
 /* ===================== RENDERIZADO EN PÁGINA ===================== */
-
 /*const products = generateProducts();*/
-const products = [];
-/* ========= PRODUCTOS MANUALMENTE ================*/
-  /* Cajas — Producto 001 */
-  products.push({
-    id: "cajas_p001",
-    category: "cajas", slug: "cajas",
-    name: "Caja - Baul",
-    price: 30000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Si requieren cerraduras, se les pueden hacer en MDF o se le coloca alguna ya prefabricada en metal. Nota: los precios varían según el requerimiento",
-      medidas: "Personalizadas",
-      material: "MDF 2.5 mm, 3 mm, 4 mm o 5.5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/cajas/p001.png"
-    ]
-  }); 
-  /* Cajas — Producto 002 */
-  products.push({
-    id: "cajas_p002",
-    category: "cajas", slug: "cajas",
-    name: "Caja - Caja para vino",
-    price: 15000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      medidas: "38.9 cm de alto, 12.3 cm de largo y 12.8 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p002.png"
-    ]
-  }); 
-  /* Cajas — Producto 003 */
-  products.push({
-    id: "cajas_p003",
-    category: "cajas", slug: "cajas",
-    name: "Caja - Cajones organizador",
-    price: 90000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "Personalizados",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p003_1.jpg",
-      "imagenes/cajas/p003_2.jpg",
-      "imagenes/cajas/p003_3.jpg",
-      "imagenes/cajas/p003_4.jpg"
-    ]
-  }); 
-  /* Cajas — Producto 004 */
-  products.push({
-    id: "cajas_p004",
-    category: "cajas", slug: "cajas",
-    name: "Toppers para tortas",
-    price: 8000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "Personalizados",
-      material: "MDF 2.5 mm o 3 mm, acrilico negro 2.5 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p004_1.png",
-      "imagenes/cajas/p004_2.jpg"
-    ]
-  }); 
-  /* Cajas — Producto 005 */
-  products.push({
-    id: "cajas_p005",
-    category: "cajas", slug: "cajas",
-    name: "Cajas - Corazon",
-    price: 20000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "19.8 cm de alto x 21.1 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p005.jpg"
-    ]
-  }); 
-  /* Cajas — Producto 006 */
-  products.push({
-    id: "cajas_p006",
-    category: "cajas", slug: "cajas",
-    name: "Cajas - Cajas decoradas x 2",
-    price: 20000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "10 cm de profundidad x 4.8 cm alto x 20 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p006.jpg"
-    ]
-  }); 
-  /* Cajas — Producto 007 */
-  products.push({
-    id: "cajas_p007",
-    category: "cajas", slug: "cajas",
-    name: "Cajas - Cajas decoradas para matrimonio",
-    price: 40000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "15.5 cm de profundidad x 11 cm alto x 24 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p007_1.png",
-      "imagenes/cajas/p007_2.png",
-      "imagenes/cajas/p007_3.png",
-      "imagenes/cajas/p007_4.png"
-    ]
-  }); 
-  /* Cajas — Producto 008 */
-  products.push({
-    id: "cajas_p008",
-    category: "cajas", slug: "cajas",
-    name: "Cajas - Cajas en forma de libros",
-    price: 20000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "10 cm de profundidad x 2.56 cm alto x 18.86 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p008_1.jpg",
-      "imagenes/cajas/p008_2.jpg"
-    ]
-  }); 
-  /* Cajas — Producto 009 */
-  products.push({
-    id: "cajas_p009",
-    category: "cajas", slug: "cajas",
-    name: "Cajas - Cajas para bombones",
-    price: 35000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "15 cm de profundidad x 7.6 cm alto x 15 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p009_1.jpg",
-      "imagenes/cajas/p009_2.jpg"
-    ]
-  }); 
-  /* Cajas — Producto 010 */
-  products.push({
-    id: "cajas_p010",
-    category: "cajas", slug: "cajas",
-    name: "Cajas - Cajas diseños varios",
-    price: 35000,
-    desc: "Tamaños y diseños personalizados.",
-    details: {
-      desc: "Tamaños y diseños personalizados. Nota: los precios varían según el requerimiento",
-      medidas: "13.6 cm de profundidad x 6.5 cm alto x 13.6 cm de ancho",
-      material: "MDF 2.5 mm o 3 mm",
-      tiempo: "2 a 4 días",
-    },
-    images: [
-      "imagenes/cajas/p010.jpg"
-    ]
-  }); 
-  /* Otros — Producto 001 */
-  products.push({
-    id: "otros_p001",
-    category: "otros", slug: "otros",
-    name: "Sellos",
-    price: 10000,
-    desc: "Sellos personalizados.",
-    details: {
-      medidas: "5 cm de alto x 5 cm de ancho",
-      material: "Acrílico negro 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/otros/p001.png"
-    ]
-  });
-  /* Organizadores — Producto 001 */
-  products.push({
-    id: "organizadores_p001",
-    category: "organizadores", slug: "organizadores",
-    name: "Organizador de llaves y llaveros",
-    price: 40000,
-    desc: "Hermosos organizadores para colgar llaves y llaveros, diseños único y hogareño. se entregan personalizados y con los colores a su gusto si lo desea.",
-    details: {
-      medidas: "18 cm de alto x 27 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/organizadores/p001.1.png",
-      "imagenes/organizadores/p001.2.png",
-      "imagenes/organizadores/p001.3.png",
-      "imagenes/organizadores/p001.4.png",
-      "imagenes/organizadores/p001.5.png",
-      "imagenes/organizadores/p001.6.png",
-      "imagenes/organizadores/p001_7.png",
-      "imagenes/organizadores/p001_8.png",
-      "imagenes/organizadores/p001_9.png",
-      "imagenes/organizadores/p001_10.png",
-      "imagenes/organizadores/p001_11.png",
-      "imagenes/organizadores/p001_12.png",
-      "imagenes/organizadores/p001_13.png",
-      "imagenes/organizadores/p001_14.png",
-      "imagenes/organizadores/p001_15.png",
-      "imagenes/organizadores/p001_16.png",
-      "imagenes/organizadores/p001_17.png",
-      "imagenes/organizadores/p001_18.png",
-      "imagenes/organizadores/p001_19.png"
-    ]
-  });
-  /* Organizadores — Producto 002 */
-  products.push({
-    id: "organizadores_p002",
-    category: "organizadores", slug: "organizadores",
-    name: "Llaveros grabados",
-    price: 2500,
-    desc: "Hermosos llaveros grabados. se entregan personalizados, el grabado que desee.",
-    details: {
-      medidas: "6,3 cm de alto x 6 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/organizadores/p002.png",
-      "imagenes/organizadores/p002_2.png"
-    ]
-  });
-  /* Decoracion — Producto 001 */
-  products.push({
-    id: "decoracion_p001",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared con luces - Jirafa",
-    price: 100000,
-    desc: "Hermosos adorno para la pared de tu bebe.",
-    details: {
-      medidas: "45 cm de alto x 51,3 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/decoracion/p001.jpg"
-    ]
-  });
-  /* Decoracion — Producto 009 */
-  products.push({
-    id: "decoracion_p009",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared con luces - Principito completo",
-    price: 150000,
-    desc: "Hermosos adorno para la pared de tu bebe. Con luces y personalizados",
-    details: {
-      medidas: "120 cm de alto x 100 cm de ancho, tamaño de toda la decoración",
-      material: "MDF 2,5 mm",
-      tiempo: "5 a 10 días",
-    },
-    images: [
-      "imagenes/decoracion/p009.png"
-    ]
-  });
-  /* Decoracion — Producto 004 */
-  products.push({
-    id: "decoracion_p004",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared - Animales de la jungla",
-    price: 70000,
-    desc: "Hermosos adorno para la pared de tu bebe. Se entregan personalizados",
-    details: {
-      medidas: "45 cm de alto x 45 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/decoracion/p004.png"
-    ]
-  });
-  /* Decoracion — Producto 005 */
-  products.push({
-    id: "decoracion_p005",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared - Oso con globos",
-    price: 70000,
-    desc: "Hermosos adorno para la pared de tu bebe. Se entregan personalizados",
-    details: {
-      medidas: "45 cm de alto x 45 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/decoracion/p005.png"
-    ]
-  });
-  /* Decoracion — Producto 006 */
-  products.push({
-    id: "decoracion_p006",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared - Principito",
-    price: 70000,
-    desc: "Hermosos adorno para la pared de tu bebe. Se entregan personalizados",
-    details: {
-      medidas: "45 cm de alto x 45 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/decoracion/p006.png"
-    ]
-  });
-  /* Decoracion — Producto 007 */
-  products.push({
-    id: "decoracion_p007",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared - Cierva con flores",
-    price: 70000,
-    desc: "Hermosos adorno para la pared de tu bebe. Se entregan personalizados",
-    details: {
-      medidas: "45 cm de alto x 45 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/decoracion/p007.jpg"
-    ]
-  });
-/* Decoracion — Producto 008 */
-  products.push({
-    id: "decoracion_p008",
-    category: "decoracion", slug: "decoracion",
-    name: "Adornos de pared - Osos, nubes y luna",
-    price: 70000,
-    desc: "Hermosos adorno para la pared de tu bebe. Se entregan personalizados",
-    details: {
-      medidas: "50 cm de alto x 50 cm de ancho",
-      material: "MDF 2,5 mm",
-      tiempo: "3 a 5 días",
-    },
-    images: [
-      "imagenes/decoracion/p008.png",
-      "imagenes/decoracion/p008_2.png"
-    ]
-  });
+/*const products = [];*/
 
+  /* ========= PRODUCTOS MANUALMENTE ================*/
+  const products = [
 
-
-
+  /* ============================= */
+  /*           CAJAS               */
+  /* ============================= */
+  
+  {
+      id: "cajas_p001",
+      category: "cajas",
+      name: "Caja - Baúl",
+      price: 30000,
+      desc: "Baúl decorativo totalmente personalizable.",
+      details: {
+          desc: "Fabricamos tu baúl con el diseño y tamaño que desees. Podemos incluir cerraduras en MDF o metálicas prefabricadas. Nota: el precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm y 4mm",
+          extra: "Diseño completamente editable",
+      },
+      images: [
+          "imagenes/cajas/p001.png"
+      ]
+  },
+  
+  {
+      id: "cajas_p002",
+      category: "cajas",
+      name: "Caja para vino",
+      price: 15000,
+      desc: "Caja personalizada para vino, con acabados decorativos.",
+      details: {
+          desc: "Caja ideal para regalar vino o licores especiales. Puedes personalizarla con nombres, fechas o diseños decorativos.",
+          medidas: "Alto 33 cm x Ancho 11 cm x Fondo 11 cm",
+          material: "MDF 3mm",
+          extra: "Personalización incluida",
+      },
+      images: [
+          "imagenes/cajas/p002.png"
+      ]
+  },
+  
+  {
+      id: "cajas_p003",
+      category: "cajas",
+      name: "Organizador con cajones",
+      price: 90000,
+      desc: "Organizador decorativo con cajones funcionales.",
+      details: {
+          desc: "Organizador con cajones elaborado según el diseño que solicites. Nota: el precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Diseño adaptado a tus necesidades",
+      },
+      images: [
+          "imagenes/cajas/p003_1.jpg", 
+          "imagenes/cajas/p003_2.jpg", 
+          "imagenes/cajas/p003_3.jpg", 
+          "imagenes/cajas/p003_4.jpg"
+      ]
+  },
+  
+  {
+      id: "cajas_p004",
+      category: "cajas",
+      name: "Toppers para tortas",
+      price: 8000,
+      desc: "Toppers decorativos para pasteles y celebraciones.",
+      details: {
+          desc: "Toppers personalizados según el diseño que desees para tu celebración. Nota: el precio puede variar según el requerimiento.",
+          medidas: "10–20 cm según diseño",
+          material: "MDF 3mm y acrílico",
+          extra: "Personalización sin costo adicional",
+      },
+      images: [
+          "imagenes/cajas/p004_1.png", 
+          "imagenes/cajas/p004_2.jpg"
+      ]
+  },
+  
+  {
+      id: "cajas_p005",
+      category: "cajas",
+      name: "Caja en forma de corazón",
+      price: 20000,
+      desc: "Caja decorativa personalizada en forma de corazón.",
+      details: {
+          desc: "Caja elaborada en forma de corazón, totalmente personalizable según tu idea. Nota: el precio puede variar según el requerimiento.",
+          medidas: "15 cm x 15 cm",
+          material: "MDF 3mm",
+          extra: "Ideal para regalos",
+      },
+      images: [
+          "imagenes/cajas/p005.jpg"
+      ]
+  },
+  
+  {
+      id: "cajas_p006",
+      category: "cajas",
+      name: "Set de cajas decoradas x2",
+      price: 35000,
+      desc: "Juego de dos cajas decorativas personalizadas.",
+      details: {
+          desc: "Set de cajas decoradas según tu diseño o temática preferida. Nota: el precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Decoración incluida",
+      },
+      images: [
+          "imagenes/cajas/p006.jpg"
+      ]
+  },
+  
+  {
+      id: "cajas_p007",
+      category: "cajas",
+      name: "Cajas decorativas para matrimonio",
+      price: 40000,
+      desc: "Cajas elegantes y personalizadas para eventos especiales.",
+      details: {
+          desc: "Cajas elaboradas con diseños especiales para matrimonios y eventos formales. Nota: el precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Incluye grabado",
+      },
+      images: [
+          "imagenes/cajas/p007_1.png", 
+          "imagenes/cajas/p007_2.png", 
+          "imagenes/cajas/p007_3.png", 
+          "imagenes/cajas/p007_4.png"
+      ]
+  },
+  
+  {
+      id: "cajas_p008",
+      category: "cajas",
+      name: "Cajas en forma de libro",
+      price: 24000,
+      desc: "Cajas decorativas con diseño de libro.",
+      details: {
+          desc: "Cajas estilo libro, ideales para regalos, almacenamiento y decoración. Nota: precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Diseño frontal personalizable",
+      },
+      images: [
+          "imagenes/cajas/p008_1.jpg", 
+          "imagenes/cajas/p008_2.jpg"
+      ]
+  },
+  
+  {
+      id: "cajas_p009",
+      category: "cajas",
+      name: "Caja para bombones",
+      price: 35000,
+      desc: "Caja decorativa para bombones o pequeños detalles.",
+      details: {
+          desc: "Caja especial para chocolates, detalles y regalos delicados. Nota: el precio puede variar según el requerimiento.",
+          medidas: "18 cm x 12 cm",
+          material: "MDF 3mm",
+          extra: "Personalización completa",
+      },
+      images: [
+          "imagenes/cajas/p009_1.jpg", 
+          "imagenes/cajas/p009_2.jpg"
+      ]
+  },
+  
+  {
+      id: "cajas_p010",
+      category: "cajas",
+      name: "Cajas – Diseños varios",
+      price: 35000,
+      desc: "Cajas decorativas personalizadas en múltiples diseños.",
+      details: {
+          desc: "Cajas elaboradas con diferentes diseños según tu idea o necesidad. Nota: el precio puede variar según el requerimiento.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Diseño libre",
+      },
+      images: [
+          "imagenes/cajas/p010.jpg"
+      ]
+  },
+  
+  
+  /* ============================= */
+  /*         OTROS PRODUCTOS       */
+  /* ============================= */
+  
+  {
+      id: "otros_p001",
+      category: "otros",
+      name: "Sellos personalizados",
+      price: 12000,
+      desc: "Sellos acrílicos personalizados según tu diseño.",
+      details: {
+          desc: "Sellos elaborados en acrílico para manualidades, firmas, empaques o decoración.",
+          medidas: "4–10 cm según diseño",
+          material: "Acrílico grabado",
+          extra: "Incluye diseño digital",
+      },
+      images: [
+          "imagenes/otros/p001.png"
+      ]
+  },
+  
+  
+  /* ============================= */
+  /*        ORGANIZADORES          */
+  /* ============================= */
+  
+  {
+      id: "organizadores_p001",
+      category: "organizadores",
+      name: "Organizador de llaves y llaveros",
+      price: 40000,
+      desc: "Organizador decorativo para llaves y llaveros.",
+      details: {
+          desc: "Organizador personalizado con diseño hogareño, ideal para la entrada de tu casa.",
+          medidas: "28 cm x 18 cm",
+          material: "MDF 3mm",
+          extra: "Colores y nombres personalizables",
+      },
+      images: [
+          "imagenes/organizadores/p001.1.png", 
+          "imagenes/organizadores/p001.2.png", 
+          "imagenes/organizadores/p001.3.png", 
+          "imagenes/organizadores/p001.4.png", 
+          "imagenes/organizadores/p001.5.png", 
+          "imagenes/organizadores/p001.6.png", 
+          "imagenes/organizadores/p001_7.png", 
+          "imagenes/organizadores/p001_8.png", 
+          "imagenes/organizadores/p001_9.png", 
+          "imagenes/organizadores/p001_10.png", 
+          "imagenes/organizadores/p001_11.png", 
+          "imagenes/organizadores/p001_12.png", 
+          "imagenes/organizadores/p001_13.png", 
+          "imagenes/organizadores/p001_14.png", 
+          "imagenes/organizadores/p001_15.png", 
+          "imagenes/organizadores/p001_16.png", 
+          "imagenes/organizadores/p001_17.png", 
+          "imagenes/organizadores/p001_18.png", 
+          "imagenes/organizadores/p001_19.png"
+      ]
+  },
+  
+  {
+      id: "organizadores_p002",
+      category: "organizadores",
+      name: "Llaveros grabados personalizados",
+      price: 4000,
+      desc: "Llaveros personalizados con grabado a láser.",
+      details: {
+          desc: "Llaveros grabados según tu texto o diseño. Ideales para regalos o recordatorios.",
+          medidas: "6–10 cm según modelo",
+          material: "MDF o acrílico",
+          extra: "Incluye anillo metálico",
+      },
+      images: [
+          "imagenes/organizadores/p002.png",
+          "imagenes/organizadores/p002_2.png"
+      ]
+  },
+  
+  
+  /* ============================= */
+  /*          DECORACIÓN           */
+  /* ============================= */
+  
+  {
+      id: "decoracion_p001",
+      category: "decoracion",
+      name: "Adorno de pared con luces – Jirafa",
+      price: 100000,
+      desc: "Hermoso adorno iluminado para la habitación del bebé.",
+      details: {
+          desc: "Jirafita con luces LED para decorar la pared. Ideal para cuartos infantiles.",
+          medidas: "35 cm x 24 cm",
+          material: "MDF 3mm y LED cálido",
+          extra: "Colores personalizables",
+      },
+      images: [
+          "imagenes/decoracion/p001.jpg"
+      ]
+  },
+  
+  {
+      id: "decoracion_p004",
+      category: "decoracion",
+      name: "Adornos de pared – Animales de la jungla",
+      price: 70000,
+      desc: "Decoración infantil con temática de la jungla.",
+      details: {
+          desc: "Set decorativo personalizado con animales de la jungla para la habitación del bebé.",
+          medidas: "30–40 cm según figura",
+          material: "MDF 3mm",
+          extra: "Colores y nombres personalizables",
+      },
+      images: [
+          "imagenes/decoracion/p004.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p005",
+      category: "decoracion",
+      name: "Adorno de pared – Oso con globos",
+      price: 70000,
+      desc: "Decoración tierna para cuarto de bebé.",
+      details: {
+          desc: "Oso decorativo con globos, ideal para temática infantil.",
+          medidas: "34 cm x 25 cm",
+          material: "MDF 3mm",
+          extra: "Colores personalizados",
+      },
+      images: [
+          "imagenes/decoracion/p005.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p006",
+      category: "decoracion",
+      name: "Adorno de pared – Principito",
+      price: 70000,
+      desc: "Decoración inspirada en El Principito.",
+      details: {
+          desc: "Figura decorativa personalizada del Principito para pared.",
+          medidas: "32 cm x 28 cm",
+          material: "MDF 3mm",
+          extra: "Incluye base de montaje",
+      },
+      images: [
+          "imagenes/decoracion/p006.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p007",
+      category: "decoracion",
+      name: "Adorno de pared – Cierva con flores",
+      price: 70000,
+      desc: "Adorno floral personalizado para cuarto infantil.",
+      details: {
+          desc: "Diseño de cierva con flores, ideal para habitaciones de niña.",
+          medidas: "35 cm",
+          material: "MDF 3mm",
+          extra: "Colores y flores personalizables",
+      },
+      images: [
+          "imagenes/decoracion/p007.jpg"
+      ]
+  },
+  
+  {
+      id: "decoracion_p008",
+      category: "decoracion",
+      name: "Adornos de pared – Osos, nubes y luna",
+      price: 70000,
+      desc: "Decoración infantil personalizada temática nocturna.",
+      details: {
+          desc: "Conjunto de figuras de ositos, nubes y luna para decorar el cuarto del bebé.",
+          medidas: "30–40 cm según figura",
+          material: "MDF 3mm",
+          extra: "Colores personalizables",
+      },
+      images: [
+          "imagenes/decoracion/p008.png",
+          "imagenes/decoracion/p008_2.png",
+          "imagenes/decoracion/p008_3.png",
+          "imagenes/decoracion/p008_4.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p009",
+      category: "decoracion",
+      name: "Adorno iluminado – Principito completo",
+      price: 150000,
+      desc: "Decoración completa e iluminada de El Principito.",
+      details: {
+          desc: "Adorno de pared con luces LED inspirado en El Principito, perfecto para decoración infantil.",
+          medidas: "40 cm",
+          material: "MDF 3mm + LED",
+          extra: "Colores totalmente personalizables",
+      },
+      images: [
+          "imagenes/decoracion/p009.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p010",
+      category: "decoracion",
+      name: "Reloj decorativo – Pájaros enamorados",
+      price: 70000,
+      desc: "Reloj decorativo personalizado con diseño romántico.",
+      details: {
+          desc: "Reloj de pared con diseño de pájaros enamorados, ideal para regalo.",
+          medidas: "30 cm de diámetro",
+          material: "MDF 3mm",
+          extra: "Incluye mecanismo silencioso",
+      },
+      images: [
+          "imagenes/decoracion/p010.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p011",
+      category: "decoracion",
+      name: "Reloj decorativo – Bombero aeronáutico",
+      price: 60000,
+      desc: "Reloj personalizado ideal para bomberos aeronáuticos.",
+      details: {
+          desc: "Reloj decorativo con diseño especial para bombero aeronáutico. Perfecto como obsequio personalizado.",
+          medidas: "30 cm",
+          material: "MDF 3mm",
+          extra: "Incluye mecanismo",
+      },
+      images: [
+          "imagenes/decoracion/p011.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p012",
+      category: "decoracion",
+      name: "Portarretrato personalizado (sin vidrio)",
+      price: 5000,
+      desc: "Portarretrato 10×15 cm con grabado personalizado.",
+      details: {
+          desc: "Marco decorativo sin vidrio, perfecto para regalos, recordatorios y decoración.",
+          medidas: "10×15 cm",
+          material: "MDF 3mm",
+          extra: "Grabado incluido",
+      },
+      images: [
+          "imagenes/decoracion/p012.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p013",
+      category: "decoracion",
+      name: "Recordatorio Día del Maestro",
+      price: 5000,
+      desc: "Recordatorio personalizado con grabado para docentes.",
+      details: {
+          desc: "Diseño ideal para obsequiar en el Día del Maestro, totalmente personalizable.",
+          medidas: "18–25 cm según modelo",
+          material: "MDF 3mm",
+          extra: "Incluye frase personalizada",
+      },
+      images: [
+          "imagenes/decoracion/p013.png"
+      ]
+  },
+  
+  {
+      id: "decoracion_p014",
+      category: "decoracion",
+      name: "Decoración completa para cuarto de bebé",
+      price: 100000,
+      desc: "Decoración personalizada completa para habitación infantil.",
+      details: {
+          desc: "Set decorativo completo para la habitación del bebé. Colores, nombres y temática totalmente personalizable.",
+          medidas: "Personalizadas",
+          material: "MDF 3mm",
+          extra: "Diseño especial a tu gusto",
+      },
+      images: [
+          "imagenes/decoracion/p014.png"
+      ]
+  }
+  
+  ];
 
   
 
@@ -866,6 +982,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
