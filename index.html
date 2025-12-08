@@ -118,6 +118,7 @@
   .modal-right{ width:54%; padding:20px; display:flex; flex-direction:column; gap:12px; }
   .modal-title{ margin:0; color:var(--madera-osc); font-size:1.35rem; }
   .modal-price{ color:var(--verde); font-weight:800; font-size:1.15rem; margin-top:6px;}
+  .modal-extra{ font-size: .95rem; color: #444; background: #f7f7f7; padding: 8px 12px; border-radius: 8px; border-left: 4px solid var(--madera-osc);}
   .modal-desc{ color:#333; line-height:1.4; margin-top:8px; }
   .modal-details{ margin-top:6px; padding:8px 12px; background:#fff8f3; border-radius:8px; border:1px solid rgba(0,0,0,.03); font-size:.95rem; color:#333; }
   .modal-actions{ margin-top:auto; display:flex; gap:8px; justify-content:flex-end; align-items:center; }
@@ -930,7 +931,7 @@ function openModal(prod){
   currentIndex = 0;
   modalTitle.innerText = prod.name;
   modalPrice.innerText = `Precio: $${formatCOP(prod.price)} COP`;
-  modalExtra.innerText = prod.extra;
+  modalExtra.innerText = prod.details.extra || "";
   modalDesc.innerText = prod.desc;
   modalDetails.innerHTML = `
     <strong>Material:</strong> ${prod.details.material} <br>
@@ -1033,6 +1034,7 @@ function contactWhatsApp(){
 
 </body>
 </html>
+
 
 
 
